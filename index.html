@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Browser: </h2>
+        <div class="logos">
+            <img class="chrome" src="logos/chrome.png" alt="" title="Chrome">
+            <img class="firefox" src="logos/firefox.png" alt="" title="Firefox">
+            <img class="edge" src="logos/edge.png" alt="" title="Edge">
+            <img class="safari" src="logos/safari.png" alt="" title="Safari">
+        </div>
+    </div>
+    <script>
+        let userAgent = navigator.userAgent;
+        let browser;
+        if(userAgent.match(/edg/i)){
+            browser = "edge"
+        }else if(userAgent.match(/firefox|fxios/i)){
+            browser = "firefox"
+        }else if(userAgent.match(/opr/i)){
+            browser = "opera"
+        }else if(userAgent.match(/chrome|chromium|crios/i)){
+            browser = 'safari'
+        }else{
+            alert("Other Browser")
+        }
+        const logo = document.querySelector(`.logos .${browser}`)
+        if(logo != ''){
+            logo.style.opacity = "1";
+        }
+
+    </script>
+</body>
+</html>
